@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep Internetowy</title>
+    <style>
+        /* Stylizacja strony */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f8fa;
+            color: #333;
+        }
+        header {
+            background-color: #6c757d; /* Stonowany szary */
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 5px solid #495057; /* Ciemniejszy odcień szarości */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #495057; /* Ciemny szary */
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #6c757d; /* Jaśniejszy odcień szarości */
+        }
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 produkty w rzędzie */
+            gap: 2rem;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Zaokrąglone rogi */
+            text-align: center;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .product:hover {
+            transform: translateY(-10px); /* Animacja najeżdżania - przesunięcie w górę */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Zaokrąglone rogi obrazka */
+            margin-bottom: 1rem;
+        }
+        .product h3 {
+            margin: 0.5rem 0;
+            color: #495057; /* Ciemniejszy odcień szarości */
+        }
+        .product a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #6c757d; /* Szary przycisk */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px; /* Zaokrąglony przycisk */
+            transition: background-color 0.3s ease;
+        }
+        .product a:hover {
+            background-color: #495057; /* Ciemniejszy szary */
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #495057;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #6c757d;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .info, .contact {
+            text-align: center;
+        }
+        .contact a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #6c757d; /* Szary */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            background-color: #495057; /* Ciemniejszy szary */
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #495057;
+            color: white;
+            margin-top: 2rem;
+            border-top: 5px solid #6c757d;
+        }
+        /* Ukrywanie sekcji */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sklep Internetowy</h1>
+    </header>
+    <nav>
+        <a onclick="showSection('dostepne-produkty')">Dostępne Produkty</a>
+        <a onclick="showSection('produkty-na-zamowienie')">Produkty na Zamówienie</a>
+        <a onclick="showSection('informacje')">Informacje</a>
+        <a onclick="showSection('legit-check')">Legit Check</a>
+    </nav>
+    <div class="content">
+        <!-- Dostępne Produkty -->
+        <section id="dostepne-produkty">
+            <h2>Dostępne Produkty</h2>
+            <div class="products">
+                <!-- Produkty -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 1">
+                    <h3>Produkt 1</h3>
+                    <a href="https://example.com/produkt1">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 2">
+                    <h3>Produkt 2</h3>
+                    <a href="https://example.com/produkt2">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 3">
+                    <h3>Produkt 3</h3>
+                    <a href="https://example.com/produkt3">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 4">
+                    <h3>Produkt 4</h3>
+                    <a href="https://example.com/produkt4">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 5">
+                    <h3>Produkt 5</h3>
+                    <a href="https://example.com/produkt5">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 6">
+                    <h3>Produkt 6</h3>
+                    <a href="https://example.com/produkt6">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 7">
+                    <h3>Produkt 7</h3>
+                    <a href="https://example.com/produkt7">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 8">
+                    <h3>Produkt 8</h3>
+                    <a href="https://example.com/produkt8">Zobacz więcej</a>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Produkt 9">
+                    <h3>Produkt 9</h3>
+                    <a href="https://example.com/produkt9">Zobacz więcej</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produkty na Zamówienie -->
+        <section id="produkty-na-zamowienie" class="hidden">
+            <h2>Produkty na Zamówienie</h2>
+            <p>Jeżeli chcesz zamówić produkt, którego nie mamy na stanie, skontaktuj się z nami!</p>
+            <div class="contact">
+                <a href="https://example.com/kontakt" class="contact-btn">Skontaktuj się z nami</a>
+            </div>
+        </section>
+
+        <!-- Informacje -->
+        <section id="informacje" class="hidden">
+            <h2>Informacje</h2>
+            <p>Regulamin sklepu: <br> Tutaj wprowadź treść regulaminu lub innego rodzaju informacje.</p>
+        </section>
+
+        <!-- Legit Check -->
+        <section id="legit-check" class="hidden">
+            <h2>Legit Check</h2>
+            <p>Jeśli chcesz sprawdzić oryginalność produktu, skontaktuj się z nami lub wyślij zdjęcia na naszą platformę. Kliknij poniżej, aby przejść do weryfikacji:</p>
+            <div class="contact">
+                <a href="https://example.com/legit-check" class="contact-btn">Przejdź do weryfikacji</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Sklep Internetowy. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Ukryj wszystkie sekcje
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.add('hidden'));
+            
+            // Pokaż wybraną sekcję
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
